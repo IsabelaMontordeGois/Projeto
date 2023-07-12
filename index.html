@@ -12,7 +12,7 @@
     <h1>Minha página inicial</h1>
     <img src="imagem1.png" height="256" with="256" />
     <p>Meu conteúdo.</p>
-    <h3> Tabela </h3>
+    <h3>Tabela</h3>
     <table>
         <tr>
             <td>Linha 1, Coluna 1</td>
@@ -29,19 +29,49 @@
         <li>Item 2</li>
         <li>Item 3</li>
     </ol>
-    <h3> Lista com "ul" </h3>
+    <h3>CONFIGURE A FERRAMENTA</h3>
+    <p>Configure informações de usuário e email para o repositórios local</p>
     <ul>
-        <li>Item 1</li>
-        <li>Item 2</li>
-        <li>Item 3</li>
+        <li><i><b>$ git config --global user.name "Nome" </b></i>permite configurar o nome ligado as suas transações de commit</li>
+        <li><i><b>$ git config --global user.email "Endereco de email" </b></i>permite configurar o endereço de e-mail utilizado em seus commits</li>
     </ul>
-    <h3> Lista com "dl" </h3>
-    <dl>
-        <dt>Título 1</dt>
-        <dd>Definição 1</dd>
-        <dt>Título 2</dt>
-        <dd>Definição 2</dt>
-    </dl>
+    <h3>CRIE REPOSITÓRIOS </h3>
+    <p>Inicie um novo repositório ou obtenha de uma URL existente</p>
+    <ul>
+        <li><i><b>$ git init </b></i>inicializa ou cria um novo repositório local</li>
+        <li><i><b>$ git clone ssh://user@domain.com/repo.git </b></i>clona um repositório existente</li>
+    </ul>
+    <h3>MODIFICAÇÕES LOCAIS</h3>
+    <p>Revise edições e crie uma transação de commit</p>
+    <ul>
+        <li><i><b>$ git status </b></i>lista todos os arquivos novos ou modificados para serem commitados</li>
+        <li><i><b>$ git diff </b></i>mostra diferenças no arquivo que não foram realizadas</li>
+        <li><i><b>$ git add [arquivo] </b></i>adicionará um arquivo à área de preparaçãos</li>
+        <li><i><b>$ git commit -m "[mensagem descritiva]" </b></i>permite que você especifique apenas um pequeno resumo para sua mensagem de commit</li>
+    </ul>
+    <h3>ATUALIZAR</h3>
+    <ul>
+        <li><i><b>$ git fetch </b></i>recuperar últimas mudanças da origem, mas não realizará o merge com a sua branch local (isso é o que git pull faz)</li>
+        <li><i><b>$ git pull  </b></i>recupera e aplica as últimas modiﬁcações da origem</li>
+    </ul>
+    <h3>PUBLICAR</h3>
+    <ul>
+        <li><i><b>$ git push </b></i>envia modiﬁcações para a origem</li>
+    </ul>
+    <h3>MUDANÇAS EM GRUPO</h3>
+    <ul>
+        <li><i><b>$ git branch </b></i>lista todos os branches locais no repositório atual</li>
+        <li><i><b>$ git branch [nome-do-branch] </b></i>cria um novo branch</li>
+        <li><i><b>$ git checkout [nome-do-branch]</b></i>muda para o branch específico e atualiza o diretório de trabalho</li>
+        <li><i><b>$ git merge [branch] </b></i>combina o histórico do branch específico com o branch atual, ou seja, faz um merge da [branch] no HEAD atual</li>
+    </ul>
+    <h3>DESFAÇA COMMITS</h3>
+    <p>Apague enganos e crie um histórico substituto</p>
+    <ul>
+        <li><i><b>$ git reset [commit] </b></i>reseta o ponteiro do HEAD para um commit anterior e e preserva todas as modificações como modificações não preparadas</li>
+        <li><i><b>$ git reset --hard [commit] </b></i>Reseta o ponteiro do HEAD para um commit anterior e descarta as modificações desde então</li>
+    </ul>
+
 </body>
 
 </html>
