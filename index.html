@@ -12,7 +12,7 @@
     <h1>Introdução ao GITHUB</h1>
     <img src="what-is-github.png" height="300" with="300" />
     <p>Meu conteúdo.</p>
-    <h3>Tabela</h3>
+    <h3>Instruções Básicas de Como usar o Git e GitHub</h3>
     <table>
         <tr>
             <td>Linha 1, Coluna 1</td>
@@ -23,28 +23,16 @@
             <td>Linha 2, Coluna 2</td>
         </tr>
     </table>
-    <h3> Lista com "ol" </h3>
-    <ol>
-        <li>Item 1</li>
-        <li>Item 2</li>
-        <li>Item 3</li>
-    </ol>
     <h2><ins>COMANDOS</ins></h2>
     <h3>CONFIGURE A FERRAMENTA</h3>
     <p>Configure informações de usuário e email para o repositórios local</p>
     <ul>
         <li><i><b>$ git config --global user.name "Nome" </b></i>permite configurar o nome ligado as suas transações de commit</li>
-<<<<<<< HEAD
         <img src="gitconfig_user.png" height="30" with="30" />
         <p></p>
         <li><i><b>$ git config --global user.email "Endereco de email" </b></i>permite configurar o endereço de e-mail utilizado em seus commits</li>
         <img src="gitconfig_user.png" height="30" with="30" />
         <p></p>
-=======
-        <img src="gitconfig_user.png" height="35" with="35" />
-        <li><i><b>$ git config --global user.email "Endereco de email" </b></i>permite configurar o endereço de e-mail utilizado em seus commits</li>
-        <img src="gitconfig_user.png" height="35" with="35" />
->>>>>>> 7436ae7725b7167cbbd9a27604c106fee483b939
         <li><i><b>$ cat ~/.gitconfig </b></i>mostra as configurações do git armazenadas no arquivo .gitconfig dentro do seu diretório pessoal.</li>
         <img src="cat.png" height="70" with="70" />
     </ul>
@@ -53,19 +41,18 @@
     <ul>
         <li><i><b>$ git init </b></i>inicializa ou cria um novo repositório local</li>
         <img src="gitinit.png" height="80" with="80" />
-<<<<<<< HEAD
         <p></p>
         <li><i><b>$ git clone ssh://user@domain.com/repo.git </b></i>clona um repositório existente</li>
         <img src="gitclone.png" height="150" with="150" />
-=======
+        <p></p>
         <li><i><b>$ git clone ssh://user@domain.com/repo.git </b></i>clona um repositório existente</li>
         <img src="gitclone.png" height="175" with="175" />
->>>>>>> 7436ae7725b7167cbbd9a27604c106fee483b939
     </ul>
     <h3>MODIFICAÇÕES LOCAIS</h3>
     <p>Revise edições e crie uma transação de commit</p>
     <ul>
-        <li><i><b>$ git status </b></i>lista todos os arquivos novos ou modificados para serem commitados</li>
+        <li><i><b>$ git status </b></i>lista todos os arquivos novos ou modificados para serem commitados, ou seja, exibe a condição da árvore de trabalho</li>
+        <p><b><em>Descrição detalhadamente:</em></b> Exibe os caminhos que têm diferenças entre o arquivo do índice e o commit atual no HEAD, os caminhos que têm diferenças entre a árvore de trabalho e o arquivo do índice, os caminhos na árvore de trabalho que não são rastreados pelo Git. O primeiro é o que você confirmaria executando o comando git commit; o segundo e o terceiro são os que você pode confirmar, executando o comando git add antes de executar o comando git commit.</p>
         <p>Exemplo na prática:</p>
         <img src="gitstatus.png" height="100" with="100" />
         <p>Exemplo na prática:</p>
@@ -85,27 +72,42 @@
         <li><i><b>$ git commit -m "[mensagem descritiva]" </b></i>permite que você especifique apenas um pequeno resumo para sua mensagem de commit</li>
         <img src="gitcommit.png" height="150" with="150" />
     </ul>
-    <h3>ATUALIZAR</h3>
+    <h3>ATUALIZAR E PUBLICAR</h3>
     <ul>
+        <li><i><b>$ git remote </b></i>gerencie o conjunto de repositórios ("remotos") cujos ramos você monitora.</li>
+        <p><em>add: </em>adiciona um ramo remoto chamado [nome] para o repositório na [url]</p>
+        <img src="gitremote.png" height="50" with="50" />
+        <p></p>
         <li><i><b>$ git fetch </b></i>recuperar últimas mudanças da origem, mas não realizará o merge com a sua branch local (isso é o que git pull faz)</li>
+        <p><em>--all:</em>Capture todos os ramos remotos.</p>
+        <img src="gitfetch.png" height="180" with="180" />
+        <p></p>
         <li><i><b>$ git pull  </b></i>recupera e aplica as últimas modiﬁcações da origem</li>
-    </ul>
-    <h3>PUBLICAR</h3>
-    <ul>
+        <img src="gitpull.png" height="250" with="250" />
+        <p></p>
         <li><i><b>$ git push </b></i>envia modiﬁcações para a origem</li>
+        <img src="gitpush.png" height="200" with="200" />
     </ul>
-    <h3>MUDANÇAS EM GRUPO</h3>
+    <h3>BRANCHES & TAGS</h3>
     <ul>
         <li><i><b>$ git branch </b></i>lista todos os branches locais no repositório atual</li>
-        <li><i><b>$ git branch [nome-do-branch] </b></i>cria um novo branch</li>
+        <img src="gitbranch1.png" height="40" with="40" />
+        <p><em>-M:</em> Atalho para --mover --força</p>
+        <img src="gitbranch2.png" height="20" with="20" />
+        <p></p>
         <li><i><b>$ git checkout [nome-do-branch]</b></i>muda para o branch específico e atualiza o diretório de trabalho</li>
-        <li><i><b>$ git merge [branch] </b></i>combina o histórico do branch específico com o branch atual, ou seja, faz um merge da [branch] no HEAD atual</li>
+        <img src="gitcheckout.png" height="250" with="250" />
+        <p></p>
+        <li><i><b>$ git merge [branch] </b></i>une dois ou mais históricos de desenvolvimento</li>
+        <img src="gitmerge.png" height="130" with="130" />
+        <li><i><b>$ git tag </b></i> crie, liste, exclua or verifique um objeto tag assinado com GPG</li>
+        <img src="gitTag.png" height="80" with="80" />
     </ul>
     <h3>DESFAÇA COMMITS</h3>
     <p>Apague enganos e crie um histórico substituto</p>
     <ul>
-        <li><i><b>$ git reset --soft HEAD^</b></i>usa quando o committed está incompleto ou digitou incorretamente a mensagem de commit, ou ambos. Deixa a árvore de trabalho como estava antes do "reset"</li>
-        <P>Exemplo prático (passo a passo):</P>
+        <li><i><b>$ git reset --soft HEAD^ </b></i>usa quando o committed está incompleto ou digitou incorretamente a mensagem de commit, ou ambos. Deixa a árvore de trabalho como estava antes do "reset"</li>
+        <p>Exemplo prático (passo a passo):</p>
         <ol>
             <li>Executando o commit:</li>
             <img src="commit.png" height="180" with="180" />
@@ -115,11 +117,44 @@
             <img src="gitreset.png" height="20" with="20" />
             <li>Percebe-se que exibe o a condição da árvore de trabalho como estava antes do "reset":</li>
             <img src="aposgitreset.png" height="250" with="250" />
-
         </ol>
-        
     </ul>
+    <h3>REFATORE NOMES DOS ARQUIVOS</h3>
+    <p>Mude e remova os arquivos versionado</p>
+    <ul>
+        <li><i><b>$ git rm [arquivo]</b></i>remove o arquivo do diretório de trabalho e o seleciona para remoção</li>
+        <li><i><b>$ git rm --cached [arquivo]</b></i>remove o arquivo do controle de versão mas preserva o arquivo localmente</li>
+        <img src="gitrm.png" height="185" with="185" />
+    </ul>
+    <h3>SALVE FRAGMENTOS</h3>
+    <p>Arquive e restaure mudanças incompletas</p>
+    <ul>
+        <li><i><b>$ git stash </b></i>armazena temporariamente todos os arquivos rastreados modificados</li>
+        <img src="gitStash1.png" height="500" with="500" />
+        <p></p>
+        <img src="gitStash2.png" height="55" with="55" />
+    </ul>
+    <h3>AJUDA E DOCUMENTAÇÃO</h3>
+    <p>Obtenha ajuda por linha de comando</p>
+    <ul>
+        <li><i><b>$ git help </b></i>exiba informações de ajuda sobre o Git</li>
+        <img src="githelp.png" height="800" with="800" />
+    </ul>
+    <h3>REVISE HISTÓRICO</h3>
+    <ul>
+        <li><i><b>$ git show [commit] </b></i>Exibe um ou mais objetos (bolhas, árvores, tags e commits).</li>
+        <img src="gitShow.png" height="280" with="280" />
+    </ul>
+    <h3>REBASE & BLAME</h3>
+    <ul>
+        <li><i><b>$ git rebase </b></i>reaplique os commits em cima do topo de outra base</li>
+        <img src="gitRebase.png" height="175" with="175" />
+        <p></p>
+        <li><i><b>$ git blame  </b></i>exibe qual revisão e qual foi o autor que alterou cada linha de um arquivo pela última vez</li>
+        <p><em>-e:</em>exibe o endereço de e-mail dos autres, em vez do nome do usuário</p>
+        <img src="gitBlame.png" height="175" with="175" />
 
+    </ul>
 </body>
 
 </html>
