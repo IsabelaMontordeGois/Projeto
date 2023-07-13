@@ -9,8 +9,8 @@
     <a href="index.html">Home</a>
     <a href="videos.html">Videos</a>
     <a href="audios.html">Audio</a>
-    <h1>Minha página inicial</h1>
-    <img src="imagem1.png" height="256" with="256" />
+    <h1>Introdução ao GITHUB</h1>
+    <img src="what-is-github.png" height="300" with="300" />
     <p>Meu conteúdo.</p>
     <h3>Tabela</h3>
     <table>
@@ -29,29 +29,50 @@
         <li>Item 2</li>
         <li>Item 3</li>
     </ol>
+    <h2><ins>COMANDOS</ins></h2>
     <h3>CONFIGURE A FERRAMENTA</h3>
     <p>Configure informações de usuário e email para o repositórios local</p>
     <ul>
         <li><i><b>$ git config --global user.name "Nome" </b></i>permite configurar o nome ligado as suas transações de commit</li>
         <img src="gitconfig_user.png" height="30" with="30" />
+        <p></p>
         <li><i><b>$ git config --global user.email "Endereco de email" </b></i>permite configurar o endereço de e-mail utilizado em seus commits</li>
         <img src="gitconfig_user.png" height="30" with="30" />
+        <p></p>
         <li><i><b>$ cat ~/.gitconfig </b></i>mostra as configurações do git armazenadas no arquivo .gitconfig dentro do seu diretório pessoal.</li>
-        <img src="cat.png" height="60" with="60" />
+        <img src="cat.png" height="70" with="70" />
     </ul>
     <h3>CRIE REPOSITÓRIOS </h3>
     <p>Inicie um novo repositório ou obtenha de uma URL existente</p>
     <ul>
         <li><i><b>$ git init </b></i>inicializa ou cria um novo repositório local</li>
+        <img src="gitinit.png" height="80" with="80" />
+        <p></p>
         <li><i><b>$ git clone ssh://user@domain.com/repo.git </b></i>clona um repositório existente</li>
+        <img src="gitclone.png" height="150" with="150" />
     </ul>
     <h3>MODIFICAÇÕES LOCAIS</h3>
     <p>Revise edições e crie uma transação de commit</p>
     <ul>
         <li><i><b>$ git status </b></i>lista todos os arquivos novos ou modificados para serem commitados</li>
-        <li><i><b>$ git diff </b></i>mostra diferenças no arquivo que não foram realizadas</li>
+        <p>Exemplo na prática:</p>
+        <img src="gitstatus.png" height="100" with="100" />
+        <p>Exemplo na prática:</p>
+        <img src="gitstatus2.png" height="340" with="340" />
+        <p></p>
+        <li><i><b>$ git diff </b></i>mostra diferenças no arquivo que não foram realizadas, ou seja, mostra as mudanças na árvore de trabalho ainda não preparadas para o próximo commit.</li>
+        <p>Exemplo na prática, após digitar o comando no terminal:</p>
+        <img src="gitdiff.png" height="500" with="500" />
+        <p></p>
+        <li><i><b>$ git diff --cached </b></i>mostra as alterações entre o índice e o seu último commit, ou seja, o que você estaria fazendo no commit caso você executasse o comando "git commit" sem a opção "-a".</li>
+        <img src="gitdiffcached.png" height="450" with="450" />
+        <p></p>
         <li><i><b>$ git add [arquivo] </b></i>adicionará um arquivo à área de preparaçãos</li>
+        <p>Exemplo na prática, depois de realizar o comando <mark>"git add"</mark> listamos os arquivos com <mark>"ls -la"</mark></p>
+        <img src="gitadd.png" height="150" with="150" />
+        <p></p>
         <li><i><b>$ git commit -m "[mensagem descritiva]" </b></i>permite que você especifique apenas um pequeno resumo para sua mensagem de commit</li>
+        <img src="gitcommit.png" height="150" with="150" />
     </ul>
     <h3>ATUALIZAR</h3>
     <ul>
@@ -72,8 +93,20 @@
     <h3>DESFAÇA COMMITS</h3>
     <p>Apague enganos e crie um histórico substituto</p>
     <ul>
-        <li><i><b>$ git reset [commit] </b></i>reseta o ponteiro do HEAD para um commit anterior e e preserva todas as modificações como modificações não preparadas</li>
-        <li><i><b>$ git reset --hard [commit] </b></i>Reseta o ponteiro do HEAD para um commit anterior e descarta as modificações desde então</li>
+        <li><i><b>$ git reset --soft HEAD^</b></i>usa quando o committed está incompleto ou digitou incorretamente a mensagem de commit, ou ambos. Deixa a árvore de trabalho como estava antes do "reset"</li>
+        <P>Exemplo prático (passo a passo):</P>
+        <ol>
+            <li>Executando o commit:</li>
+            <img src="commit.png" height="180" with="180" />
+            <li>Exibe o a condição da árvore de trabalho, após o commit:</li>
+            <img src="aposcommit.png" height="100" with="100" />
+            <li><mark>Executando o comando reset:</mark></li>
+            <img src="gitreset.png" height="20" with="20" />
+            <li>Percebe-se que exibe o a condição da árvore de trabalho como estava antes do "reset":</li>
+            <img src="aposgitreset.png" height="250" with="250" />
+
+        </ol>
+        
     </ul>
 
 </body>
